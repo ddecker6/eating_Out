@@ -69,6 +69,14 @@ basicCC + geom_bar(stat="identity", position = "dodge")
   
 Looking at this second set of graphical data, it continues to show that white people are more prone to saying yes to outing out, while other races and black people are saying no. There are still black people saying yes, there is just less black people saying yes in comparison to white.
 
+### Numerical Summaries  
+
+```{r}
+table1 <- xtabs(~race + eatout, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
 
 
+Now with this numerical data, we are still seeing more white people say yes in comparison to the other races. For example, there are 81.75% white people saying yes, while there are 11.76% black people saying yes, and in the other category 6.49%. 
 

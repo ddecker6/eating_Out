@@ -50,3 +50,25 @@ barchartGC(~race + eatout,data=mydata, type="percent")
 
 In this set of graphical data, we can interpret that there is a higher frequency of white people eating out in comparison to the black demographic, as well as other. The Blue bar is white people in this graph, which shows how many say yes to eating out. In the second plot, we can see that there is still a higher percentage of white people saying yes in comparison to the other races. 
 
+#### Plot barplots ggplot way
+
+```{r}
+dd2 <- mydata %>% group_by(race,eatout) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=race,y=eatout,fill=eatout))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=race,y=prcnt*100,fill=eatout)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+  
+Looking at this second set of graphical data, it continues to show that white people are more prone to saying yes to outing out, while other races and black people are saying no. There are still black people saying yes, there is just less black people saying yes in comparison to white.
+
+
+
+

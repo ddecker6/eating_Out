@@ -80,3 +80,26 @@ colPerc(table1)
 
 Now with this numerical data, we are still seeing more white people say yes in comparison to the other races. For example, there are 81.75% white people saying yes, while there are 11.76% black people saying yes, and in the other category 6.49%. 
 
+## Inferential  
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+We have a low P value of 2.287e-06. The Chi-squared test shows the # of people that said no and yes and which race they are.  
+
+```{r}
+fisherXY(mydata$race,mydata$eatout)
+```
+
+
+
+The P value of white is greater than 0.05. The P value is lower for black. The white and black have a difference of 2.2 eating out. The odds between Black and White is somewhere between .4 and 1.49, these two methods ar very similar to eachother. 
+
+
+
+## Conclusion
+
+Today in class we had to import our own data and use that data to answer questions on it. We used our template Cat_Cat in order to get different types of data to be able to observe the data we imported. With this said, we were able to statistically find a difference between the races based on our different sets of results.
